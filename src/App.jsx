@@ -10,6 +10,7 @@ import Auth from "./pages/Auth.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import PostJob from "./pages/PostJob.jsx";
 import EditProfile from "./pages/EditProfile.jsx";
+import FreelancerProfile from "./pages/FreelancerProfile.jsx";
 
 export default function App() {
   return (
@@ -26,6 +27,8 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/post-job" element={<PostJob />} />
         <Route path="/edit-profile" element={<EditProfile />} />
+        <Route path="/profile/:uid" element={<FreelancerProfile />} />
+
       </Routes>
     </>
   );

@@ -11,7 +11,7 @@ export default function EditProfile() {
   const navigate = useNavigate();
 
   const [bio, setBio] = useState("");
-  const [email, setEmail] = useState("");
+  
   const [profilePicture, setProfilePicture] = useState("");
   const [profilePictureFile, setProfilePictureFile] = useState(null);
   const [resume, setResume] = useState("");
@@ -26,7 +26,7 @@ export default function EditProfile() {
         if (docSnap.exists()) {
           const data = docSnap.data();
           setBio(data.bio || "");
-          setEmail(data.email || currentUser.email);
+          
           setProfilePicture(data.profilePicture || "");
           setResume(data.resume || "");
         } else {
@@ -62,8 +62,8 @@ export default function EditProfile() {
 
     const userRef = doc(db, "users", currentUser.uid);
     const updates = {
-      bio,
-      email,
+      bio
+      
     };
 
     try {
@@ -106,15 +106,7 @@ export default function EditProfile() {
             />
           </div>
 
-          <div>
-            <label className="block text-sm font-medium">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full border-gray-300 rounded shadow-sm mt-1"
-            />
-          </div>
+          
 
           <div>
             <label className="block text-sm font-medium">Profile Picture</label>

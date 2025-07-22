@@ -1,12 +1,17 @@
 import { Link } from "react-router-dom";
 import StatusTag from "../components/StatusTag";
 import { useUser } from "../context/UserContext";
-import { db } from "../firebase";
-import { doc, updateDoc } from "firebase/firestore";
-import toast from "react-hot-toast";
 
 export default function Dashboard() {
-  const { user, jobs, proposals, setProposals, setJobs, loading } = useUser();
+  const {
+    user,
+    jobs,
+    proposals,
+    loading,
+
+    changeJobStatus,
+    changeProposalStatus,
+  } = useUser();
 
   if (loading) {
     return (
@@ -44,36 +49,6 @@ export default function Dashboard() {
   const proposalsForMyJobs = proposals.filter((p) =>
     jobsPostedByClient.some((job) => job.id === p.jobId)
   );
-
-  const handleStatusChange = async (proposalId, newStatus) => {
-    setProposals((prev) =>
-      prev.map((p) => (p.id === proposalId ? { ...p, status: newStatus } : p))
-    );
-
-    try {
-      const proposalRef = doc(db, "proposals", String(proposalId));
-      await updateDoc(proposalRef, { status: newStatus });
-      toast.success(`Proposal marked as ${newStatus}`);
-    } catch (err) {
-      console.error(err);
-      toast.error("Failed to update proposal in database.");
-    }
-  };
-
-  const handleJobStatusChange = async (jobId, newStatus) => {
-    setJobs((prev) =>
-      prev.map((j) => (j.id === jobId ? { ...j, status: newStatus } : j))
-    );
-
-    try {
-      const jobRef = doc(db, "jobs", String(jobId));
-      await updateDoc(jobRef, { status: newStatus });
-      toast.success(`Job marked as ${newStatus}`);
-    } catch (err) {
-      console.error(err);
-      toast.error("Failed to update job in database.");
-    }
-  };
 
   return (
     <main className="min-h-screen bg-gray-50 px-4 py-8">
@@ -165,7 +140,7 @@ export default function Dashboard() {
                       {job.status !== "Completed" && (
                         <button
                           onClick={() =>
-                            handleJobStatusChange(
+                            changeJobStatus(
                               job.id,
                               job.status === "Open" ? "In Progress" : "Completed"
                             )
@@ -199,10 +174,16 @@ export default function Dashboard() {
                       <h3 className="text-lg font-medium text-gray-800">
                         {job?.title || "Job deleted"}
                       </h3>
-                      <p className="text-gray-500">
-                        From: {proposal.freelancer} | Budget:{" "}
-                        {proposal.proposedBudget}
-                      </p>
+                     <p className="text-gray-500">
+  From:{" "}
+  <Link
+    to={`/profile/${proposal.freelancerUid}`}
+    className="text-blue-500 underline"
+  >
+    {proposal.freelancer}
+  </Link>{" "}
+  | Budget: {proposal.proposedBudget}
+</p>
                       <p className="text-gray-700 mt-2">{proposal.message}</p>
                       <div className="mt-2 flex items-center gap-2">
                         <StatusTag status={proposal.status} />
@@ -210,7 +191,7 @@ export default function Dashboard() {
                           <>
                             <button
                               onClick={() =>
-                                handleStatusChange(proposal.id, "Accepted")
+                                changeProposalStatus(proposal.id, "Accepted")
                               }
                               className="px-2 py-1 bg-green-500 text-white text-sm rounded hover:bg-green-600"
                             >
@@ -218,7 +199,7 @@ export default function Dashboard() {
                             </button>
                             <button
                               onClick={() =>
-                                handleStatusChange(proposal.id, "Rejected")
+                                changeProposalStatus(proposal.id, "Rejected")
                               }
                               className="px-2 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600"
                             >
