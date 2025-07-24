@@ -1,12 +1,53 @@
-# React + Vite
+Bidly
+Bidly is a modern freelance marketplace platform where clients can post jobs and freelancers can send proposals. It’s built with React, Firebase, Tailwind CSS, and Framer Motion—designed for speed, usability, and responsiveness.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🌟 What It Does
+For Clients: Post jobs, receive proposals, and choose freelancers.
 
-Currently, two official plugins are available:
+For Freelancers: Browse available jobs and submit proposals.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+For Everyone: A seamless platform for connecting clients with the right talent.
 
-## Expanding the ESLint configuration
+🔧 Tech Stack
+Frontend: React, Tailwind CSS, Framer Motion, React Router
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Backend: Firebase (Authentication, Firestore, Hosting)
+
+Icons: Lucide React
+
+Animations: Framer Motion
+
+✨ Features
+🧑‍💼 Client & Freelancer sign-up flow
+
+📄 Job posting and proposal system
+
+🔐 Firebase Authentication
+
+☁️ Real-time database using Firebase Firestore
+
+🖼️ Responsive design (Mobile & Desktop)
+
+🎨 Animated sections and smooth UI transitions
+
+📬 Newsletter and contact section
+
+🚀 Getting Started
+bash
+Copy
+Edit
+git clone https://github.com/Ridwantajudeen/bidly.git
+cd bidly
+npm install
+npm run dev
+💡 Make sure you set up Firebase and add your config to the environment.
+
+
+🔮 Future Plans
+Chat/Messaging between users
+
+Job status tracking
+
+Payment integration
+
+Admin panel

@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import HowItWorks from "../components/HowItWorks";
+import WhyChooseBidly from "../components/WhyChooseUs";
+import CallToAction from "../components/CallToAction";
+import ContactUs from "../components/ContactUs";
 
 export default function Home() {
   return (
@@ -17,7 +21,7 @@ export default function Home() {
             Bid on opportunities. Land your next gig.
           </h1>
           <p className="text-lg sm:text-xl mb-8">
-            Welcome to <span className="text-blue-400 font-semibold">Bidly</span> — the lightweight freelance platform for modern professionals.
+            Welcome to <span className="text-blue-400 font-semibold">Bidly.</span> The freelance platform for modern professionals.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
@@ -34,7 +38,14 @@ export default function Home() {
             </Link>
           </div>
         </div>
+        
       </section>
+      <WhyChooseBidly/>
+      <HowItWorks/>
+      <CallToAction/>
+      <ContactUs/>
+      
     </main>
+    
   );
 }
