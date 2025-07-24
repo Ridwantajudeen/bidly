@@ -22,7 +22,7 @@ export default function CallToAction() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Whether you're hiring talent or offering your skills — Bidly makes freelancing fast, fair, and focused.
+          Whether you're hiring talent or offering your skills. Bidly makes freelancing fast, fair, and focused.
         </motion.p>
 
         <motion.div
