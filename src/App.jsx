@@ -17,7 +17,8 @@ export default function App() {
   return (
     <>
       <Toaster position="top-right" />
-      <Navbar />
+      <Navbar  />
+      <div className="pt-16">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/jobs" element={<Jobs />} />
@@ -29,8 +30,10 @@ export default function App() {
         <Route path="/post-job" element={<PostJob />} />
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route path="/profile/:uid" element={<FreelancerProfile />} />
+        
 
       </Routes>
+      </div>
       <Footer/>
     </>
   );
