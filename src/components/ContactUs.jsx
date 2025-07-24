@@ -15,7 +15,7 @@ export default function ContactUs() {
         >
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Let's Talk</h2>
           <p className="text-gray-600 mb-6">
-            Got a question, suggestion, or need support? Reach out — we're always happy to hear from you.
+            Got a question, suggestion, or need support? Reach out. We're always happy to hear from you.
           </p>
 
           <div className="space-y-4">
