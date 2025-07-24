@@ -50,12 +50,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link to="/" className="text-2xl font-bold text-blue-600">
-            Bidly
-          </Link>
+          
+          <Link to="/">
+  <img src="/bidly-logo.png" alt="Bidly Logo" className="h-23 w-auto" />
+</Link>
 
-          {/* Desktop Nav */}
+          
           <nav className="space-x-4 hidden md:flex items-center">
             <Link to="/jobs" className="text-gray-700 hover:text-blue-600 transition">
               Jobs
@@ -103,7 +103,7 @@ export default function Navbar() {
                           handleLogout();
                           setDropdownOpen(false);
                         }}
-                        className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+                        className="block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100"
                       >
                         Logout
                       </button>
@@ -129,7 +129,7 @@ export default function Navbar() {
             )}
           </nav>
 
-          {/* Mobile Nav Button */}
+          
           <div className="md:hidden fixed top-5 right-5 z-50">
             <button
               onClick={toggleMobile}
