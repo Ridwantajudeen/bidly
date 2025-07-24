@@ -7,7 +7,7 @@ export default function WhyChooseBidly() {
       icon: <BadgeCheck className="w-8 h-8 text-indigo-600" />,
       title: "Verified Freelancers",
       description:
-        "We vet every freelancer so you hire with confidence — quality work only.",
+        "We vet every freelancer so you hire with confidence. Quality work only.",
     },
     {
       icon: <Rocket className="w-8 h-8 text-purple-600" />,
@@ -19,7 +19,7 @@ export default function WhyChooseBidly() {
       icon: <Users className="w-8 h-8 text-green-600" />,
       title: "Built for Teams",
       description:
-        "Manage conversations, deadlines, and files — all in one place, whether solo or in a team.",
+        "Manage conversations, deadlines, and files. All in one place, whether solo or in a team.",
     },
     {
       icon: <Workflow className="w-8 h-8 text-blue-500" />,
